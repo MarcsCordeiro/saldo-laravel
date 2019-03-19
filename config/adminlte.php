@@ -15,7 +15,7 @@ return [
 
     'title' => 'SISTEMA DE SALDO LARAVEL',
 
-    'title_prefix' => 'Saldo',
+    'title_prefix' => '',
 
     'title_postfix' => '-Sempre ao seu lado',
 
