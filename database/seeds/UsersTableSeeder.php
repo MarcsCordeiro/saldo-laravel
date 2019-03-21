@@ -18,5 +18,12 @@ class UsersTableSeeder extends Seeder
             'email'     => 'maria@laravel.com',
             'password' => bcrypt('123456'),
         ]);
+        
+        User::create([
+            
+            'name'      => 'Outro',
+            'email'     => 'outro@laravel.com',
+            'password' => bcrypt('123456'),
+        ]);
     }
 }
