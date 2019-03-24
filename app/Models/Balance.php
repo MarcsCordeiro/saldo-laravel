@@ -3,12 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Balance extends Model
 {
     public $timestamps = false;
     
     public function deposit($value):array{
+        
+        DB::beginTransaction();
+        
         $totalBefore = $this->amount ? $this->amount : 0;
         $this->amount += $value;
         $deposit = $this->save();
@@ -21,15 +25,23 @@ class Balance extends Model
             'date'          => date('Ymd'),
         ]);
         
-        if($deposit && $historic)
+        if($deposit && $historic){
+            
+            DB::commit();
+            
             return[
             'success' => 'true',
             'message' => 'Sucesso ao carregar'
         ];
-        
-        return[
+        }else{
+            
+            DB::rollback();
+            
+             return[
             'success' => 'false',
             'message' => 'Falha ao carregar'
         ];
+        }     
+       
     }
 }

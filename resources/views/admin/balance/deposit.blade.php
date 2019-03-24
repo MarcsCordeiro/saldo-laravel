@@ -17,9 +17,11 @@
         <div class="box-header">
             
             <h3>Fazer Recarga</h3>
-            
+        </div>   
          <div class="box-body">
-              
+             
+            @include('admin.includes.alert')
+             
             <form class="form-collection" method="POST" action="{{ route('deposit.store') }}" >
                 {!! csrf_field() !!}
                 
@@ -33,5 +35,5 @@
         </div>
 
     </div>
-   </div>
+   
 @stop
