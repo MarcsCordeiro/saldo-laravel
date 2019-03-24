@@ -16,7 +16,7 @@
     <div class="box" >
         <div class="box-header">
             <a href="{{ route('balance.deposit')}}" class="btn btn-primary"> <i class="fas fa-cart-arrow-down"></i> Recarregar</a>
-            <a href="" class="btn btn-danger"> <i class="fas fa-cart-plus"></i> Sacar</a>
+            <a href="{{ route('balance.withdrawn') }}" class="btn btn-danger"> <i class="fas fa-cart-plus"></i> Sacar</a>
         
          <div class="box-body">
              
